@@ -1,4 +1,11 @@
+const ESLintPlugin = require('eslint-webpack-plugin');
+
 const path = require('path');
+
+const options = {
+  exclude: 'node_modules',
+};
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -33,11 +40,12 @@ module.exports = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
     ],
   },
   resolve: {
     extensions: ['*', '.js'],
   },
+  plugins: [new ESLintPlugin(options)],
 };

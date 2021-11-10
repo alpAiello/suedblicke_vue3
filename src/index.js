@@ -10,7 +10,7 @@ function component() {
     { value: 3 },
     { value: 4 },
   ];
-  const billo = (array) => array[0];
+  const billo = (arr) => arr[0];
   console.log(billo(array));
   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
   element.classList.add('hello');
